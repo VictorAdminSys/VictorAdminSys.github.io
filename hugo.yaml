@@ -1,0 +1,337 @@
+baseURL: "https://VictorAdminSys.github.io/"
+languageCode: "es-es"
+defaultContentLanguage: es
+defaultContentLanguageInSubdir: false
+title: "Hugo Profile"
+theme: hugo-profile
+
+outputs:
+  home:
+  - "HTML"
+  - "RSS"
+  - "JSON"
+  page:
+  - "HTML"
+  - "RSS"
+
+enableRobotsTXT: true
+
+#services:
+  #googleAnalytics:
+    #id: G-MEASUREMENT_ID
+  #disqus:
+    #shortname: your-disqus-shortname
+
+pagination:
+  pagerSize: 3
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+  - identifier: gallery
+    name: Galería
+    title: Galería de imágenes
+    url: /gallery
+    weight: 2
+params:
+  title: "Hugo Profile"
+  description: Text about my cool site
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/fav.png"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # When using hex codes for colors, quotations must be used along with the # sign
+  # color:
+  #   textColor: "#343a40"
+  #   secondaryTextColor: "#6c757d"
+  #   textLinkColor: "#007bff"
+  #   backgroundColor: "#eaedf0"
+  #   secondaryBackgroundColor: "#64ffda1a"
+  #   primaryColor: "#007bff"
+  #   secondaryColor: "#f8f9fa"
+
+  #   darkmode:
+  #     textColor: "#e4e6eb"
+  #     secondaryTextColor: "#b0b3b8"
+  #     textLinkColor: "#ffffff"
+  #     backgroundColor: "#18191a"
+  #     secondaryBackgroundColor: "#212529"
+  #     primaryColor: "#ffffff"
+  #     secondaryColor: "#212529"
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Victor Admin" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: true
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: true
+      disableAchievements: true
+      disableContact: false
+
+  # Hero
+    showBrandLogo: false
+  hero:
+    enable: true
+    intro: "Hola, soy"
+    title: "Victor Moreno."
+    subtitle: "Administrador de Sistemas & DevOps"
+    content: "Administrador de sistemas con más de 20 años de experiencia en infraestructura, administración de servidores Windows, Active Directory y despliegue de aplicaciones. Actualmente en transición hacia proyectos de automatización e inteligencia artificial."
+    image: /images/me.png
+    bottomImage:
+      enable: true
+    # roundImage: true # Make hero image circular | default false
+    button:
+      enable: true
+      name: "Currículum"
+      url: "/CV_Victor%20Manuel%20Moreno%20Vi%C3%B1as.pdf"
+      download: true
+      newPage: true
+    socialLinks:
+      fontAwesomeIcons:
+      - icon: fab fa-github
+        url: https://example.com
+      - icon: fab fa-x-twitter
+        url: https://example.com
+  about:
+    enable: true
+    title: "Sobre Mí"
+    image: "/images/me.png"
+    content: |-
+      Soy administrador de sistemas con más de 20 años de experiencia en infraestructura IT, administración de servidores Windows Server, Active Directory, y despliegue y monitorización de aplicaciones en entornos de producción críticos.
+
+      A lo largo de mi trayectoria he trabajado en compañías como Indra Minsait, Axpe Consulting y Artyco Comunicación y Servicios, combinando administración de sistemas con automatización de procesos mediante PowerShell y pipelines de despliegue con Jenkins.
+
+      Actualmente estoy orientando mi carrera hacia la automatización y la inteligencia artificial, explorando cómo aplicar estas tecnologías a proyectos propios.
+    skills:
+      enable: true
+      title: "Algunas tecnologías con las que he trabajado:"
+      items:
+      - Windows Server
+      - Active Directory
+      - PowerShell
+      - Jenkins
+      - IIS
+      - SQL Server
+      - VMware
+      - Icinga / Grafana
+  experience:
+    enable: true
+    # title: "Custom Name"
+    items:
+    - company: AXPE Consulting
+      jobs:
+      - name: Administrador de Sistemas de TIC
+        date: Jul 2025 - Dic 2025
+        content: "Administración y mantenimiento de entornos Windows Server y Active Directory.\n- Automatización de tareas mediante PowerShell (creación masiva de usuarios, informes, gestión de permisos).\n- Soporte 24/7 en entorno productivo crítico.\n- Monitorización mediante Icinga y Grafana (alertas, dashboards y consultas personalizadas).\n- Resolución de incidencias de nivel 2 y coordinación con equipos técnicos."
+    - company: Indra Minsait
+      jobs:
+      - name: Analista de Implantaciones / Gestión de Aplicaciones
+        date: Oct 2018 - Dic 2024
+        content: "Compilación y despliegue de aplicaciones mediante Jenkins y Clarive en entornos de Integración, Certificación y Producción.\n- Diagnóstico de incidencias complejas mediante herramientas de depuración y análisis de logs de servidor.\n- Inspección técnica de registros mediante el Visor de Eventos de Windows.\n- Elaboración y ejecución segura de sentencias de manipulación de datos (INSERT, UPDATE, DELETE).\n- Gestión de incidencias relacionadas con despliegues.\n- Catalogación de ofertas y dispositivos para Telefónica (Movistar y O2)."
+    - company: Zener Plus
+      jobs:
+      - name: Administrativo (Coordinador / Jefe de Equipo)
+        date: Feb 2018 - Ago 2018
+        content: Coordinación de un equipo de técnicos de instalación de líneas de voz/datos (mínimo 10 personas).
+    - company: Simitel Telemática
+      jobs:
+      - name: Administrador de Sistemas de TIC
+        date: Ago 2017 - Feb 2018
+        content: "Mantenimiento de sistemas informáticos y redes.\n- Instalación de centralitas telefónicas.\n- Configuración de equipos en red."
+    - company: Viewnext - IBM
+      jobs:
+      - name: Administrador de Sistemas de TIC
+        date: Mar 2016 - Oct 2016
+        content: "Creación y mantenimiento de máquinas virtualizadas con VMware Workstation.\n- Instalación y mantenimiento de servidores Windows Server (2003, 2008, 2012).\n- Creación y mantenimiento de usuarios en Active Directory.\n- Soporte a usuarios de nivel 2/3."
+    - company: Artyco Comunicación y Servicios
+      jobs:
+      - name: Administrador de Sistemas de TIC
+        date: Dic 2006 - Sep 2013
+        content: "Administración del ciclo de vida de servidores Windows Server (2000, 2003 y 2008): instalación, configuración, migración y securización.\n- Administración de servidores web IIS: despliegue y configuración de sitios, pools de aplicaciones y mantenimiento técnico.\n- Resolución de incidencias informáticas de nivel 2/3, vía telefónica e in situ.\n- Configuración y mantenimiento de firewalls Astaro Security Gateway (reglas de filtrado, NAT y VPNs).\n- Gestión de Active Directory: usuarios, grupos, permisos y políticas de grupo (GPOs).\n- Administración de bases de datos SQL Server (2000, 2005 y 2008) y realización de backups."
+    - company: Telenorma Sistemas
+      jobs:
+      - name: Técnico de Telecomunicación
+        date: Abr 2005 - May 2006
+        content: "Reparación de equipos informáticos, redes, hardware y centralitas.\n- Cableado e instalación de voz/datos en obra.\n- Instalación y configuración de centralitas telefónicas (LG).\n- Configuración de redes TCP/IP y Wifi."
+    - company: Cortefiel, S.A.
+      jobs:
+      - name: Analista de Sistemas de TIC
+        date: May 2004 - Nov 2004
+        content: "Creación de redes TCP/IP.\n- Configuración y mantenimiento de servidores Windows 2003 Server y XP.\n- Recepción, reparación y mantenimiento de TPVs."
+  education:
+    enable: true
+    # title: "Custom Name"
+    index: false
+    items:
+    - title: CFGM Informática de Sistemas Microinformáticos
+      school:
+        name: Centro I.E. Dos de Mayo
+      date: 2002 - 2004
+      content: Formación en administración de sistemas microinformáticos.
+    - title: Certificado de Profesionalidad - Administrador de Sistemas Microinformáticos
+      school:
+        name: Centro IBM Madrid
+      date: 2001 - 2002
+    - title: Graduado Escolar
+      school:
+        name: CEA Rosalía de Castro
+      date: '2001'
+  achievements:
+    enable: false
+    # title: "Custom Name"
+    items:
+    - title: Finalista de Google Kickstart
+      content: Resolví todos los problemas con solución óptima.
+      url: https://example.com
+      image: /images/achievement.jpg
+    - title: Ganador del Hackathon de Facebook
+      content: Desarrollé un producto usando Inteligencia Artificial.
+      image: /images/achievement.jpg
+    - title: Hugo Profile
+      content: Desarrollé un tema y obtuve más de 1K descargas por mes.
+      url: "https://github.com/gurusabarish/hugo-profile"
+      image: /images/achievement.jpg
+    - title: Finalista de Microsoft Imagine
+      content: Desarrollamos un producto que puede ayudar a otros.
+    - title: Google Summer of Code
+      content: Contribuí a un proyecto de código abierto.
+      url: https://example.com
+  projects:
+    enable: false
+    # title: "Custom Name"
+    items:
+    - title: Hugo Profile
+      content: Una plantilla Hugo altamente personalizable y centrada en dispositivos móviles para portafolio personal y blog.
+      image: /images/projects/profile.png
+      featured:
+        name: Demo
+        link: https://hugo-profile.netlify.app
+      badges:
+      - "Hugo"
+      - "Bootstrap"
+      - "Javascript"
+      links:
+      - icon: fa fa-envelope
+        url: mailto:?subject=Plantilla%20Hugo%20Profile&body=Échale%20un%20vistazo:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+      - icon: fab fa-github
+        url: https://github.com/gurusabarish/hugo-profile
+      - icon: fab fa-twitter
+        url: https://twitter.com/intent/tweet?text=Échale+un+vistazo:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+    - title: Conversor de Imágenes
+      content: Una aplicación web para convertir imágenes a pdf, png a jpg, png a jpg y png a webp sin base de datos usando django.
+      image: /images/projects/converter.jpg
+      featured:
+        name: Demo
+        link: https://django-converter.herokuapp.com
+      badges:
+      - "Django"
+      - "Bootstrap"
+      links:
+      - icon: fab fa-github
+        url: https://github.com/gurusabarish/converter
+    - title: Hugo Profile V2
+      content: Una plantilla Hugo limpia y simple para portafolio personal y blog.
+      image: /images/projects/profile2.jpg
+      featured:
+        name: Demo V2
+        link: https://hugo-profile-2.netlify.app
+      badges:
+      - "Hugo"
+      - "Bootstrap"
+      - "Javascript"
+      links:
+      - icon: fab fa-github
+        url: https://github.com/gurusabarish/HugoProfileV2
+  contact:
+    enable: true
+    # title: "Custom Name"
+    content: Mi bandeja de entrada siempre está abierta. Ya sea que tengas una pregunta o simplemente quieras saludar, ¡haré todo lo posible para responderte!
+    btnName: Escríbeme
+    btnLink: mailto:victormmv@gmail.com
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+    #   messageRows: 5
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Publicaciones recientes
+      enable: false
+      disableFeaturedImage: false
+    socialNetworks:
+      instagram: https://www.instagram.com/vmmv82/
+      linkedin: https://www.linkedin.com/in/victor-manuel-moreno-vi%C3%B1as-05914628/
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    socialShare: true
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+    tags:
+      openInNewTab: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>
+  customScripts: "<style>\n  .viewer-enabled-image {\n    object-fit: cover;\n  }\n  footer a[title=\"Hugo Profile\"] {\n    display: none !important;\n  }\n  footer .text-secondary {\n    display: none !important;\n  }\n</style>\n"
