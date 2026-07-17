@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-<link rel="icon" href="/fav.png" type="image/gif">
+<link rel="icon" href="/images/me.png" type="image/gif">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
 
 
 <meta property="og:url" content="http://localhost:1313/blogs/math/">
-	<meta property="og:site_name" content="Hugo Profile">
+	<meta property="og:site_name" content="Victor Moreno - Portfolio">
 	<meta property="og:title" content="Renderizar Matemáticas con Mathjax">
 	<meta property="og:description" content="Mathjax Las ecuaciones matemáticas se pueden renderizar usando la sintaxis de Mathjax con soporte de símbolos AMS.
 Opcionalmente, habilita esto por página agregando mathjax: true a tu frontmatter.
@@ -133,7 +133,7 @@ $$ | Pr_{x \leftarrow P_{1}} [A(x) = 1] - Pr_{x \leftarrow P_{2}} [A(x) = 1] | &
   
 
   <title>
-Renderizar Matemáticas con Mathjax | Hugo Profile
+Renderizar Matemáticas con Mathjax | Victor Moreno - Portfolio
 
   </title>
 </head>
@@ -540,8 +540,8 @@ Renderizar Matemáticas con Mathjax | Hugo Profile
         <div class="col-md-4 text-center">
             
                 <div class="pb-2">
-                    <a href="http://localhost:1313/" title="Hugo Profile">
-                        <img alt="Footer logo" src="/fav.png"
+                    <a href="http://localhost:1313/" title="Victor Moreno - Portfolio">
+                        <img alt="Footer logo" src="/images/me.png"
                             height="40px" width="40px">
                     </a>
                 </div>
@@ -639,7 +639,27 @@ Renderizar Matemáticas con Mathjax | Hugo Profile
   footer .text-secondary {
     display: none !important;
   }
+  .nav-link.bg-transparent {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.7rem;
+    white-space: nowrap;
+  }
+  #experience .experience-container {
+    max-width: 100% !important;
+  }
+  #experience [class*="col-"] {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+  }
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[href$=".pdf"]').forEach(function (el) {
+    el.insertAdjacentHTML('afterbegin', '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5b942" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>');
+  });
+});
+</script>
 
 
 
