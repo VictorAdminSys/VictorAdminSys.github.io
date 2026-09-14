@@ -114,7 +114,7 @@ params:
   hero:
     enable: true
     intro: "Hola, soy"
-    title: "Victor Moreno."
+    title: "Victor Manuel Moreno Viñas."
     subtitle: "Administrador de Sistemas IT"
     content: "Administrador de sistemas con más de 20 años de experiencia en infraestructura, administración de servidores Windows, Active Directory y despliegue de aplicaciones. Actualmente en transición hacia proyectos de automatización e inteligencia artificial."
     image: /images/me.png
