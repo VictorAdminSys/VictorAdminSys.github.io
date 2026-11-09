@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Amigo Invisible 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+*{box-sizing:border-box} body{margin:0} :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Layout: una columna estrecha; modo organizador (lista de envíos) y modo sobre (revelación) */
+:root{
+  --bg:#f3f5f1; --surface:#ffffff; --fg:#17251d; --muted:#5d6b62; --line:#dbe2dc;
+  --pine:#1f5c3f; --pine-soft:#e3efe7; --berry:#b8323c; --berry-soft:#f8e3e4; --gold:#b98a1e; --gold-soft:#f6edd5;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1712; --surface:#18231c; --fg:#e8efe9; --muted:#9aaa9f; --line:#2a3a30;
+  --pine:#6cc496; --pine-soft:#1d3427; --berry:#f0727a; --berry-soft:#3a1d20; --gold:#e3b84f; --gold-soft:#352b14; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1712; --surface:#18231c; --fg:#e8efe9; --muted:#9aaa9f; --line:#2a3a30;
+  --pine:#6cc496; --pine-soft:#1d3427; --berry:#f0727a; --berry-soft:#3a1d20; --gold:#e3b84f; --gold-soft:#352b14; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:640px;margin:0 auto;padding-block:28px 48px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));display:flex;flex-direction:column;gap:20px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(28px,7vw,40px);font-weight:800;line-height:1.05}
+h2{font-size:20px;font-weight:600}
+p{margin:0}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--pine);font-weight:700}
+.muted{color:var(--muted)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--gold-soft);color:var(--fg);border-radius:999px;padding:5px 12px;font-size:14px;font-weight:600}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.progress{font-variant-numeric:tabular-nums;font-weight:700}
+.list{display:flex;flex-direction:column;gap:10px}
+.row{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.row.done{opacity:.62}
+.row.shared{border-left:5px solid var(--berry)}
+.rowtop{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.name{font-family:var(--display);font-weight:600;font-size:19px}
+.phone{font-variant-numeric:tabular-nums;color:var(--muted);user-select:all}
+.warn{background:var(--berry-soft);color:var(--fg);border-radius:8px;padding:8px 10px;font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{font:inherit;font-weight:700;font-size:15px;border:0;border-radius:10px;padding:10px 14px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn-wa{background:var(--pine);color:var(--surface)}
+.btn-ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.btn-berry{background:var(--berry);color:var(--surface)}
+.check{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);margin-left:auto;cursor:pointer}
+details summary{cursor:pointer;color:var(--muted);font-size:14px}
+pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--pine-soft);border-radius:8px;padding:10px;font-family:var(--body);font-size:14px;margin:8px 0 0}
+.confirmbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+/* Sobre */
+.envelope{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 20px;text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center}
+.seal{width:72px;height:72px;border-radius:50%;background:var(--berry);color:var(--surface);display:grid;place-items:center;font-size:34px}
+.big{font-family:var(--display);font-weight:800;font-size:clamp(40px,12vw,64px);color:var(--berry);line-height:1}
+.reveal-in{animation:pop .6s ease-out}
+@keyframes pop{from{transform:scale(.85);opacity:.3}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){.reveal-in{animation:none}}
+.stack{display:flex;flex-direction:column;gap:10px;align-items:center}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+const PEOPLE = [
+  {name:"Singla"},
+  {name:"Víctor", me:true},
+  {name:"David"},
+  {name:"Nayma"},
+  {name:"Pili", tag:"🔴", other:"Jose"},
+  {name:"Jose", tag:"🔵", other:"Pili"},
+  {name:"Azu"},
+  {name:"Andrea"},
+  {name:"Eva"},
+];
+// quién NO puede regalar a quién
+const EXCL = {"Eva":["Pili","Jose","Azu"], "Andrea":["Pili","Jose","Azu"]};
+const BUDGET = "máximo 15 €";
+const DATE = "25 de diciembre por la mañana 🎄";
+
+// ===== Codificación del enlace (no deja ver el nombre) =====
+const P = 1000003, A = 48271;
+function inv(a,m){let [o,r]=[a,m],[s,t]=[1,0];while(r){const q=Math.floor(o/r);[o,r]=[r,o-q*r];[s,t]=[t,s-q*t];}return ((s%m)+m)%m;}
+const AINV = inv(A,P);
+function encode(g,r,s){return "a"+((s*100+g*10+r)*A%P).toString(36);}
+function decode(h){
+  if(!/^a[0-9a-z]{1,5}$/.test(h)) return null;
+  const x=parseInt(h.slice(1),36); if(!(x<P)) return null;
+  const v=x*AINV%P, r=v%10, g=Math.floor(v/10)%10, s=Math.floor(v/100);
+  if(s<1||g>=PEOPLE.length||r>=PEOPLE.length||g===r) return null;
+  if((EXCL[PEOPLE[g].name]||[]).includes(PEOPLE[r].name)) return null;
+  return {g,r};
+}
+
+
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const app=document.getElementById("app");
+
+// ===== Modo revelación =====
+function renderReveal(res){
+  const g=PEOPLE[res.g], r=PEOPLE[res.r];
+  app.innerHTML=`
+    <div class="envelope">
+      <div class="seal" aria-hidden="true">🎁</div>
+      <p class="eyebrow">Amigo Invisible · organizado por Victor</p>
+      <h1>¿Eres ${esc(g.name)}?</h1>
+      <p class="muted">Este sobre es solo para ${esc(g.name)}. Si no eres tú, ciérralo sin mirar.</p>
+      ${g.other?`<p class="warn">⚠️ ${esc(g.other)}: este es el de ${esc(g.name)}. El tuyo te llegó en otro mensaje.</p>`:""}
+      <div class="actions" style="justify-content:center">
+        <button class="btn btn-berry" id="yes">Sí, soy ${esc(g.name)}</button>
+        <button class="btn btn-ghost" id="no">No, cerrar</button>
+      </div>
+    </div>`;
+  document.getElementById("yes").onclick=()=>{
+    app.innerHTML=`
+      <div class="envelope">
+        <p class="eyebrow">${esc(g.name)}, te ha tocado regalar a…</p>
+        <div class="big reveal-in">${esc(r.name)}</div>
+        <p>🎉 ¡Que no se entere nadie!</p>
+      </div>
+      <div class="panel">
+        <h2>Lo que tienes que saber</h2>
+        <div class="facts">
+          <span class="chip">💶 Presupuesto: ${esc(BUDGET)}</span>
+          <span class="chip">📅 ${esc(DATE)}</span>
+        </div>
+        <p>🏆 <strong>Habrá premio para el regalo más original o gracioso.</strong> Échale imaginación.</p>
+      </div>`;
+  };
+  document.getElementById("no").onclick=()=>{
+    app.innerHTML=`<div class="envelope"><div class="seal" aria-hidden="true">🤫</div><h1>Sobre cerrado</h1><p class="muted">No has visto nada. Ya puedes cerrar esta página.</p></div>`;
+  };
+}
+
+
+function route(){
+  const h=location.hash.slice(1);
+  const res=h?decode(h):null;
+  if(res) return renderReveal(res);
+  app.innerHTML=`<div class="envelope"><div class="seal" aria-hidden="true">🎁</div><h1>Amigo Invisible</h1><p class="muted">${h?"Este enlace está incompleto. Pídele a Victor que te lo reenvíe.":"Abre el enlace que te ha mandado Victor por WhatsApp."}</p></div>`;
+}
+window.addEventListener("hashchange",route);
+route();
+</script>
+</body>
+</html>
